@@ -13,8 +13,10 @@ public class Nomor2 {
         
         // Loop untuk input data driver
         while (true) {
+            String namaDriver;
+            // Mengambil input nama driver
             System.out.print("Masukan nama driver [Beliau/Mereka/Kita]: ");
-            String namaDriver = scanner.next(); // Nama driver
+            namaDriver = scanner.next(); // Nama driver
             
             // Cek jika nama driver valid
             boolean isValidDriver = false;
@@ -30,6 +32,7 @@ public class Nomor2 {
                 continue; // Kembali ke awal loop jika nama tidak valid
             }
             
+            // Mengambil input lama trip
             System.out.print("lama trip (km): ");
             int lamaTrip = scanner.nextInt(); // Lama trip dalam km
             
@@ -59,9 +62,9 @@ public class Nomor2 {
             }
         }
         
-        // Output total trip dan driver dengan omzet tertinggi
-        System.out.println("Total trip yang dilakukan driver = " + totalTrip);
-        System.out.println("Omzet tertinggi diperoleh oleh " + driverTertinggi + " dengan total Omzet = " + maxOmzet);
+        // Output total trip dan driver dengan omzet tertinggi dalam format yang diharapkan
+        System.out.println(totalTrip);
+        System.out.println(driverTertinggi + " " + maxOmzet);
         
         scanner.close(); // Tutup scanner
     }
