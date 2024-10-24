@@ -1,61 +1,52 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Nomor2 {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        Map<String, Integer> totalTrip = new HashMap<>();
+        String[] drivers = {"Beliau", "Mereka", "Kita"};
 
-        int tripBeliau = 0, tripMereka = 0, tripKita = 0;
-        double omzetBeliau = 0, omzetMereka = 0, omzetKita = 0;
-        double biayaPerKm = 13000;
-        int totalTrip = 0;
-
-        String lagi;
-
-        do {
-            String driver = input.next();
-
-            int lamaTrip = input.nextInt();
-
-            switch (driver.toLowerCase()) {
-                case "beliau":
-                    tripBeliau += lamaTrip;
-                    omzetBeliau += lamaTrip * biayaPerKm;
-                    break;
-                case "mereka":
-                    tripMereka += lamaTrip;
-                    omzetMereka += lamaTrip * biayaPerKm;
-                    break;
-                case "kita":
-                    tripKita += lamaTrip;
-                    omzetKita += lamaTrip * biayaPerKm;
-                    break;
-                default:
-                    System.out.println("Nama driver tidak valid!");
-                    break;
-            }
-
-            totalTrip += lamaTrip;
-
-            lagi = input.next();
-
-        } while (lagi.equalsIgnoreCase("Y"));
-
-        String driverTertinggi;
-        double omzetTertinggi;
-        if (omzetBeliau >= omzetMereka && omzetBeliau >= omzetKita) {
-            driverTertinggi = "Beliau";
-            omzetTertinggi = omzetBeliau;
-        } else if (omzetMereka >= omzetBeliau && omzetMereka >= omzetKita) {
-            driverTertinggi = "Mereka";
-            omzetTertinggi = omzetMereka;
-        } else {
-            driverTertinggi = "Kita";
-            omzetTertinggi = omzetKita;
+        // Inisialisasi total trip untuk setiap driver
+        for (String driver : drivers) {
+            totalTrip.put(driver, 0);
         }
 
-        System.out.println("Total trip yang dilakukan driver = " + totalTrip);
-        System.out.println("Omzet tertinggi diperoleh oleh " + driverTertinggi + " dengan total Omzet = " + omzetTertinggi);
+        String inputLanjut;
+        do {
+            System.out.print("Masukan nama driver [Beliau/Mereka/Kita]: ");
+            String namaDriver = scanner.next();
+            System.out.print("lama trip (km): ");
+            int lamaTrip = scanner.nextInt();
 
-        input.close();
+            // Hitung omzet dan tambahkan ke total trip driver
+            totalTrip.put(namaDriver, totalTrip.get(namaDriver) + lamaTrip);
+
+            // Tanyakan apakah ingin input lagi
+            System.out.print("Input lagi (Y/N)?: ");
+            inputLanjut = scanner.next();
+        } while (inputLanjut.equalsIgnoreCase("Y"));
+
+        // Hitung total trip dan omzet
+        int totalKeseluruhan = 0;
+        String driverTertinggi = "";
+        int omzetTertinggi = 0;
+
+        for (String driver : drivers) {
+            int trip = totalTrip.get(driver);
+            totalKeseluruhan += trip;
+            int omzet = trip * 13000;
+
+            if (omzet > omzetTertinggi) {
+                omzetTertinggi = omzet;
+                driverTertinggi = driver;
+            }
+        }
+
+        System.out.printf("Total trip yang dilakukan driver = %d\n", totalKeseluruhan);
+        System.out.printf("Omzet tertinggi diperoleh oleh %s dengan total Omzet = %d\n", driverTertinggi, omzetTertinggi);
+
+        scanner.close();
     }
 }
