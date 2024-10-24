@@ -13,7 +13,7 @@ public class Nomor2 {
             System.out.print("lama trip (km): ");
             int lamaTrip = scanner.nextInt();
             totalTrip += lamaTrip;
-
+            
             int omzet = lamaTrip * 13000;
             if (omzet > omzetTertinggi) {
                 omzetTertinggi = omzet;
@@ -27,7 +27,7 @@ public class Nomor2 {
             }
         }
         
-        System.out.printf("Total trip yang dilakukan driver = %d\n", totalTrip);
-        System.out.printf("Omzet tertinggi diperoleh oleh %s dengan total Omzet = %d\n", driverTertinggi, omzetTertinggi);
+        System.out.printf("%d\n", totalTrip);
+        System.out.printf("%s %d\n", driverTertinggi, omzetTertinggi);
     }
 }
