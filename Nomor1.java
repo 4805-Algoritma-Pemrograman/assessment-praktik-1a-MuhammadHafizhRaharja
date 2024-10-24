@@ -1,17 +1,23 @@
+import java.util.Scanner;
+
 public class Nomor1 {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        int jamLembur = scanner.nextInt();
+        double honor = 0;
 
-        int jamLembur = input.nextInt();
-
-        double honorLembur;
-
-        if (jamLembur <= 16) {
-            honorLembur = jamLembur * 10000;
-        } else {
-            honorLembur = (16 * 10000) + ((jamLembur - 16) * 15000);
+        if (jamLembur < 16) {
+            // Hitung lembur di bawah 16 jam
+            honor = jamLembur * 100000;
+        } else if (jamLembur == 16) {
+            // Hitung lembur pas 16 jam
+            honor = jamLembur * 100000;
+        } else if (jamLembur > 16) {
+            // Hitung lembur di atas 16 jam
+            honor = jamLembur * 110000;
         }
 
-        System.out.println("Honor lembur: " + honorLembur);
+        System.out.println("Honor lembur: " + honor);
+        scanner.close();
     }
 }
