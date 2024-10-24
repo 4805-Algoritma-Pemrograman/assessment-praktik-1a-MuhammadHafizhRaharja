@@ -18,3 +18,4 @@ public class Nomor1 {
         
         input.close();
     }
+}
