@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class OmzetDriver {
+public class Nomor2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
@@ -15,26 +15,33 @@ public class OmzetDriver {
         while (true) {
             System.out.print("Masukan nama driver [Beliau/Mereka/Kita]: ");
             String namaDriver = scanner.next(); // Nama driver
-            System.out.print("lama trip (km): ");
-            int lamaTrip = scanner.nextInt(); // Lama trip dalam km
             
-            // Hitung omzet
-            int index = -1;
-            for (int i = 0; i < drivers.length; i++) {
-                if (drivers[i].equalsIgnoreCase(namaDriver)) {
-                    index = i;
+            // Cek jika nama driver valid
+            boolean isValidDriver = false;
+            for (String driver : drivers) {
+                if (driver.equalsIgnoreCase(namaDriver)) {
+                    isValidDriver = true;
                     break;
                 }
             }
             
-            if (index != -1) { // Jika nama driver valid
-                int omzetDriver = lamaTrip * 13000; // Hitung omzet
-                omzet[index] += omzetDriver; // Tambahkan ke omzet driver
-                totalTrip += lamaTrip; // Tambahkan ke total trip
-            } else {
+            if (!isValidDriver) {
                 System.out.println("Nama driver tidak valid. Silakan coba lagi.");
                 continue; // Kembali ke awal loop jika nama tidak valid
             }
+            
+            System.out.print("lama trip (km): ");
+            int lamaTrip = scanner.nextInt(); // Lama trip dalam km
+            
+            // Hitung omzet
+            int omzetDriver = lamaTrip * 13000; // Hitung omzet
+            for (int i = 0; i < drivers.length; i++) {
+                if (drivers[i].equalsIgnoreCase(namaDriver)) {
+                    omzet[i] += omzetDriver; // Tambahkan ke omzet driver
+                    break; // Keluar dari loop setelah menemukan driver
+                }
+            }
+            totalTrip += lamaTrip; // Tambahkan ke total trip
             
             // Tanya apakah ingin memasukkan data lagi
             System.out.print("Input lagi (Y/N)?: ");
