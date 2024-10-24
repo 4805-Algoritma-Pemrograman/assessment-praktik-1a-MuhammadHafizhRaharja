@@ -21,3 +21,22 @@ public class Nomor1 {
         input.close();
     }
 }
+
+// Program Total_Jam_Lembur;
+
+// Deklarasi :
+
+// VARCHAR jamLembur : integer;
+// VARCHAR honorLembur : double;
+
+// Algoritma :
+
+// INPUT jamLembur;
+// IF (jamLembur <= 16) THEN
+// 	CALCULATE honorLembur = jamLembur * 10000;
+// ELSE 
+// 	CALCULATE honorLembur = (16 * 10000) + ((jamLembur - 16) * 15000);
+// END IF
+// PRINT ("Total jam lembur: " + jamLembur);
+// PRINT ("Honor lembur: " + honorLembur);
+// END
