@@ -4,15 +4,15 @@ public class Nomor1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int jamLembur = scanner.nextInt();
-        double honor;
+        double honorLembur;
 
         if (jamLembur <= 16) {
-            honor = jamLembur * 100000.00;
+            honorLembur = jamLembur * 100000.00;
         } else {
-            honor = 16 * 100000.00 + (jamLembur - 16) * 110000.00;
+            honorLembur = 16 * 100000.00 + (jamLembur - 16) * 110000.00;
         }
 
-        System.out.printf("%.2f%n", honor);
+        System.out.printf("%.2f%n", honorLembur);
 
         scanner.close();
     }
