@@ -5,7 +5,6 @@ public class Nomor1 {
         Scanner scanner = new Scanner(System.in);
         
         // Input jam lembur
-        System.out.print("Masukkan jam lembur: ");
         int jamLembur = scanner.nextInt();
         
         double honor = 0;
