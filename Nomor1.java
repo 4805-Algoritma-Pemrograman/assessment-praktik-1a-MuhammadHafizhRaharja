@@ -16,7 +16,6 @@ public class Nomor1 {
             // Hitung lembur di atas 16 jam
             honor = jamLembur * 110000;
         }
-
         System.out.println("Honor lembur: " + honor);
         scanner.close();
     }
