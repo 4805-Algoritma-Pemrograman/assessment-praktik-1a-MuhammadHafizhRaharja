@@ -7,13 +7,13 @@ public class Nomor2 {
         int tripBeliau = 0, tripMereka = 0, tripKita = 0;
         double omzetBeliau = 0, omzetMereka = 0, omzetKita = 0;
         double biayaPerKm = 13000;
+        int totalTrip = 0;
+
         String lagi;
 
         do {
-            System.out.print("Masukan nama driver [Beliau/Mereka/Kita]: ");
             String driver = input.next();
 
-            System.out.print("Lama trip (km): ");
             int lamaTrip = input.nextInt();
 
             switch (driver.toLowerCase()) {
@@ -34,12 +34,11 @@ public class Nomor2 {
                     break;
             }
 
-            System.out.print("Input lagi (Y/N)?: ");
+            totalTrip += lamaTrip;
+
             lagi = input.next();
 
         } while (lagi.equalsIgnoreCase("Y"));
-
-        int totalTrip = tripBeliau + tripMereka + tripKita;
 
         String driverTertinggi;
         double omzetTertinggi;
