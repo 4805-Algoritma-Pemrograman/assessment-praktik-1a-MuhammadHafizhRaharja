@@ -11,7 +11,6 @@ public class Nomor1 {
         } else {
             honor = (16 * 10000) + ((jamLembur - 16) * 15000);
         }
-        
         // Output
         System.out.printf("%.1f\n", honor);
     }
