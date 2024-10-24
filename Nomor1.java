@@ -12,7 +12,7 @@ public class Nomor1 {
             honor = (16 * 10000) + ((jamLembur - 16) * 15000);
         }
         
-        System.out.printf("Total jam lembur: %d\n", jamLembur);
-        System.out.printf("Honor lembur: %.1f\n", honor);
+        // Output
+        System.out.printf("%.1f\n", honor);
     }
 }
