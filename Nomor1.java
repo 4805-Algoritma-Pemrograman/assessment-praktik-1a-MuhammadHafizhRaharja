@@ -5,7 +5,6 @@ public class Nomor1 {
         Scanner scanner = new Scanner(System.in);
         int jamLembur = scanner.nextInt();
         double honor = 0;
-
         if (jamLembur < 16) {
             // Hitung lembur di bawah 16 jam
             honor = jamLembur * 100000;
