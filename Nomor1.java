@@ -13,7 +13,5 @@ public class Nomor1 {
         }
 
         System.out.println("Honor lembur: " + honorLembur);
-        
-        input.close();
     }
 }
