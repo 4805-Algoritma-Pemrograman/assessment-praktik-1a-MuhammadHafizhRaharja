@@ -46,7 +46,6 @@ public class Nomor2 {
 
         System.out.printf("Total trip yang dilakukan driver = %d\n", totalKeseluruhan);
         System.out.printf("Omzet tertinggi diperoleh oleh %s dengan total Omzet = %d\n", driverTertinggi, omzetTertinggi);
-
         scanner.close();
     }
 }
